@@ -31,7 +31,8 @@ jobs:
         run: npm test
       - name: Output information
         # access env var. using env context obj
-        run: echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
+        run: |
+          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
